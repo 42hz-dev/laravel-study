@@ -5,8 +5,23 @@ use App\Models\ListsBak;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 
+/**
+ * Form csrf, get, post, put, delete practice
+ */
 Route::get('/', function () {
     return view('welcome');
+});
+
+Route::post('/', function (Request $request) {
+    dd($request->all());
+});
+
+Route::put('/{id}', function (Request $request, int $id) {
+    return 'PUT ROUTE = ' . $id;
+});
+
+Route::delete('/{id}', function (Request $request, int $id) {
+    return 'DELETE ROUTE = ' . $id;
 });
 
 /**
